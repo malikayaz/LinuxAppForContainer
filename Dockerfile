@@ -22,7 +22,7 @@ WORKDIR /src
 #COPY ["LinuxAppForContainer/LinuxAppForContainer.csproj", "LinuxAppForContainer/"]  
 COPY . ./
 # Restore tools and packages for the solution on the local disk  
-RUN dotnet restore "LinuxAppForContainer/LinuxAppForContainer.csproj"  
+RUN dotnet restore #"LinuxAppForContainer/LinuxAppForContainer.csproj"  
 # Copy all files/folders recursively from current folder where the docker 
 # file is present on local directory to /src   
 COPY . .  
