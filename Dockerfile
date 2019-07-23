@@ -4,6 +4,7 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 # Set /app as working directory.  
 WORKDIR /app  
+COPY *.csproj ./
 # Expose port 80 on Image.  
 EXPOSE 80  
 # Expose port 443 on Image.  
