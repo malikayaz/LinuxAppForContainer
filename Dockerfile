@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["LinuxAppForContainer/LinuxAppForContainer.csproj", "LinuxAppForContainer/"]
+COPY ["LinuxAppForContainer.csproj", "LinuxAppForContainer/"]
 RUN dotnet restore "LinuxAppForContainer.csproj"
 COPY . .
 WORKDIR "/src/LinuxAppForContainer"
