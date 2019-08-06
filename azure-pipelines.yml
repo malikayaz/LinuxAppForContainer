@@ -18,13 +18,13 @@ steps:
 - task: Docker@0
   displayName: 'Build an image'
   inputs:
-    azureSubscription: 'DataPOC'
+    azureSubscription: 'aks-connection'
     azureContainerRegistry: '{"loginServer":"sbxdatamgmtacr.azurecr.io", "id" : "/subscriptions/ee5d1262-9e4b-46ec-8a14-0f5f835f6ac2/resourceGroups/sbx-datamgmt-aks-rg/providers/Microsoft.ContainerRegistry/registries/sbxdatamgmtacr"}'
     imageName: '$(Build.Repository.Name):latest'
 - task: Docker@0
   displayName: 'Push an image'
   inputs:
-    azureSubscription: 'DataPOC'
+    azureSubscription: 'aks-connection'
     azureContainerRegistry: '{"loginServer":"sbxdatamgmtacr.azurecr.io", "id" : "/subscriptions/ee5d1262-9e4b-46ec-8a14-0f5f835f6ac2/resourceGroups/sbx-datamgmt-aks-rg/providers/Microsoft.ContainerRegistry/registries/sbxdatamgmtacr"}'
     action: 'Push an image'
     imageName: '$(Build.Repository.Name):latest'
